@@ -1,0 +1,19 @@
+{
+  "name": "@daopk/eslint-config-monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "description": "daopk's ESLint config",
+  "author": "daopk2",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint .",
+    "bumpp": "bumpp package.json packages/*/package.json --no-push",
+    "release": "pnpm bumpp && pnpm -r publish --access public --registry=https://nexus.infra.zalo.services/repository/daopk-npm/"
+  },
+  "devDependencies": {
+    "@daopk/eslint-config-ts": "workspace:*",
+    "bumpp": "^8.2.1",
+    "eslint": "^8.33.0",
+    "typescript": "^4.9.5"
+  }
+}
