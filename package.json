@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint .",
-    "release": "bumpp package.json packages/*/package.json --no-push && pnpm -r publish --access public"
+    "release": "bumpp package.json packages/*/package.json && pnpm -r publish --access public"
   },
   "devDependencies": {
     "@daopk/eslint-config-ts": "workspace:*",
