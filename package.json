@@ -1,6 +1,6 @@
 {
   "name": "@daopk/eslint-config-monorepo",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": true,
   "description": "daopk's ESLint config",
   "author": "daopk2",
