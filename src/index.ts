@@ -30,15 +30,6 @@ export default function daopk(options: Options = {}, ...userConfigs: Linter.Conf
             name: 'daopk/ignores',
         },
         {
-            files: ['**/*.ts'],
-            languageOptions: {
-                ecmaVersion: 'latest',
-                parser: tsParser,
-                sourceType: 'module',
-            },
-            name: 'daopk/ts-parser',
-        },
-        {
             name: 'daopk/eslint',
             rules: {
                 eqeqeq: 'error',
@@ -71,6 +62,12 @@ export default function daopk(options: Options = {}, ...userConfigs: Linter.Conf
             },
         },
         {
+            files: ['**/*.ts'],
+            languageOptions: {
+                ecmaVersion: 'latest',
+                parser: tsParser,
+                sourceType: 'module',
+            },
             name: 'daopk/typescript',
             plugins: {
                 typescript,
