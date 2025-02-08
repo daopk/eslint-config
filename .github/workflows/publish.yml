@@ -27,4 +27,4 @@ jobs:
       - name: Build inspector
         run: pnpm inspector:build
 
-      - run: pnpx pkg-pr-new publish
+      - run: pnpx pkg-pr-new publish --compact

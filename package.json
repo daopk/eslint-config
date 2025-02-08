@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "license": "ISC",
+  "repository": "github:daopk/eslint-config",
   "exports": {
     ".": "./dist/index.js"
   },
