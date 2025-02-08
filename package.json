@@ -16,7 +16,8 @@
     "typegen": "tsx scripts/typegen.ts",
     "inspector": "eslint-config-inspector",
     "inspector:build": "pnpm build && eslint-config-inspector build",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "release": "bumpp && pnpm publish"
   },
   "dependencies": {
     "@stylistic/eslint-plugin": "^3.1.0",
@@ -27,13 +28,14 @@
     "eslint-plugin-import-x": "^4.6.1",
     "eslint-plugin-n": "^17.15.1",
     "eslint-plugin-perfectionist": "^4.8.0",
-    "eslint-plugin-unused-imports": "^4.1.4",
-    "eslint-typegen": "^1.0.0"
+    "eslint-plugin-unused-imports": "^4.1.4"
   },
   "devDependencies": {
     "@eslint/config-inspector": "^1.0.0",
     "@types/node": "^22.13.1",
+    "bumpp": "^10.0.2",
     "eslint": "^9.20.0",
+    "eslint-typegen": "^1.0.0",
     "jiti": "^2.4.2",
     "tsup": "^8.3.6",
     "tsx": "^4.19.2",
