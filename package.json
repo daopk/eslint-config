@@ -18,6 +18,7 @@
     "inspector": "eslint-config-inspector",
     "inspector:build": "pnpm build && eslint-config-inspector build",
     "lint": "eslint .",
+    "prepack": "pnpm build",
     "release": "bumpp && pnpm publish"
   },
   "dependencies": {
