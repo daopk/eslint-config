@@ -1,7 +1,7 @@
 {
   "name": "@daopk/eslint-config",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "ISC",
   "repository": "github:daopk/eslint-config",
   "exports": {
