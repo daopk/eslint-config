@@ -13,10 +13,10 @@
     "dist"
   ],
   "scripts": {
-    "build": "pnpm typegen && tsup",
+    "dev": "eslint-config-inspector",
     "typegen": "tsx scripts/typegen.ts",
-    "inspector": "eslint-config-inspector",
-    "inspector:build": "pnpm build && eslint-config-inspector build",
+    "build": "pnpm typegen && tsup",
+    "build:inspector": "pnpm build && eslint-config-inspector build",
     "lint": "eslint .",
     "prepack": "pnpm build",
     "release": "bumpp && pnpm publish"

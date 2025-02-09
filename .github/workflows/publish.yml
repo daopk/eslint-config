@@ -25,6 +25,6 @@ jobs:
         run: pnpm install
 
       - name: Build inspector
-        run: pnpm inspector:build
+        run: pnpm build:inspector
 
       - run: pnpx pkg-pr-new publish --compact

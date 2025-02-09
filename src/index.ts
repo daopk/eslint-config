@@ -1,6 +1,7 @@
+import type { StylisticCustomizeOptions } from '@stylistic/eslint-plugin'
 import type { Linter } from 'eslint'
-import type { RuleOptions } from './typegen'
 
+import type { RuleOptions } from './typegen'
 import stylistic from '@stylistic/eslint-plugin'
 import typescript from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
@@ -11,16 +12,32 @@ import node from 'eslint-plugin-n'
 import perfectionist from 'eslint-plugin-perfectionist'
 import unusedImports from 'eslint-plugin-unused-imports'
 
-export interface Options {
+type StylisticOptions = Omit<StylisticCustomizeOptions, 'flat' | 'pluginName'>
+
+export interface Options extends StylisticOptions {
     ignores?: string[]
     rules?: RuleOptions
 }
 
 export type LinterConfig = Omit<Linter.Config, 'plugins'> & {
-    plugins?: Record<string, any>;
+    plugins?: Record<string, any>
 }
 
 export default function daopk(options: Options = {}, ...userConfigs: Linter.Config[]): LinterConfig[] {
+    const stylisticConfig = stylistic.configs.customize({
+        arrowParens: options.arrowParens ?? true,
+        blockSpacing: options.blockSpacing,
+        braceStyle: options.braceStyle,
+        commaDangle: options.commaDangle,
+        flat: true,
+        indent: options.indent ?? 4,
+        jsx: options.jsx,
+        pluginName: 'stylistic',
+        quoteProps: options.quoteProps,
+        quotes: options.quotes ?? 'single',
+        semi: options.semi ?? false,
+    })
+
     const configs: LinterConfig[] = [
         {
             ignores: [
@@ -32,7 +49,7 @@ export default function daopk(options: Options = {}, ...userConfigs: Linter.Conf
         {
             name: 'daopk/eslint',
             rules: {
-                eqeqeq: 'error',
+                'eqeqeq': 'error',
                 'no-cond-assign': ['error', 'always'],
                 'no-extra-boolean-cast': 'error',
                 'no-regex-spaces': 'error',
@@ -43,22 +60,17 @@ export default function daopk(options: Options = {}, ...userConfigs: Linter.Conf
                 'yoda': ['error', 'never'],
             },
         },
+
         {
             name: 'daopk/stylistic',
             plugins: {
                 stylistic,
             },
             rules: {
+                ...stylisticConfig.rules,
+
                 'stylistic/array-bracket-newline': ['error', 'consistent'],
-                'stylistic/array-bracket-spacing': ['error', 'never'],
                 'stylistic/array-element-newline': ['error', 'consistent'],
-                'stylistic/brace-style': ['error', '1tbs', { 'allowSingleLine': true }],
-                'stylistic/comma-dangle': ['error', 'always-multiline'],
-                'stylistic/indent': ['error', 4],
-                'stylistic/no-multi-spaces': 'error',
-                'stylistic/no-multiple-empty-lines': ['error', { 'max': 1 }],
-                'stylistic/quotes': ['error', 'single'],
-                'stylistic/semi': ['error', 'never'],
             },
         },
         {
@@ -85,7 +97,7 @@ export default function daopk(options: Options = {}, ...userConfigs: Linter.Conf
         {
             name: 'daopk/imports',
             plugins: {
-                import: importX,
+                'import': importX,
                 'unused-imports': unusedImports,
             },
             rules: {
@@ -101,10 +113,10 @@ export default function daopk(options: Options = {}, ...userConfigs: Linter.Conf
                 'unused-imports/no-unused-vars': [
                     'warn',
                     {
-                        'args': 'after-used',
-                        'argsIgnorePattern': '^_',
-                        'vars': 'all',
-                        'varsIgnorePattern': '^_',
+                        args: 'after-used',
+                        argsIgnorePattern: '^_',
+                        vars: 'all',
+                        varsIgnorePattern: '^_',
                     },
                 ],
             },
@@ -155,7 +167,6 @@ export default function daopk(options: Options = {}, ...userConfigs: Linter.Conf
                 }],
                 'perfectionist/sort-named-exports': ['error', { order: 'asc', type: 'natural' }],
                 'perfectionist/sort-named-imports': ['error', { order: 'asc', type: 'natural' }],
-                'perfectionist/sort-objects': 'error',
             },
         },
     ]
