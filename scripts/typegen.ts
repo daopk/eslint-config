@@ -17,7 +17,7 @@ const configs: LinterConfig[] = [
                 rules: Object.fromEntries(builtinRules.entries()),
             },
             antfu,
-            import: importX,
+            'import': importX,
             node,
             perfectionist,
             stylistic,
