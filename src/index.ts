@@ -29,7 +29,6 @@ export default function daopk(options: Options = {}, ...userConfigs: Linter.Conf
         blockSpacing: options.blockSpacing,
         braceStyle: options.braceStyle,
         commaDangle: options.commaDangle,
-        flat: true,
         indent: options.indent ?? 4,
         jsx: options.jsx,
         pluginName: 'stylistic',
