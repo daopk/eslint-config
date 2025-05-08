@@ -1,8 +1,13 @@
+import type { RuleOptions } from '../typegen'
 import type { LinterConfig } from '../types'
 import typescriptPlugin from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
 
-export function typescript(): LinterConfig {
+export interface TypescriptOptions {
+    rules?: RuleOptions
+}
+
+export function typescript({ rules }: TypescriptOptions = {}): LinterConfig {
     return {
         files: ['**/*.ts'],
         languageOptions: {
@@ -22,6 +27,8 @@ export function typescript(): LinterConfig {
             }],
 
             'typescript/no-unused-vars': 'off',
+
+            ...rules,
         },
     }
 }

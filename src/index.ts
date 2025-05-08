@@ -9,6 +9,8 @@ import { perfectionist } from './configs/perfectionist'
 import { stylistic } from './configs/stylistic'
 import { typescript } from './configs/typescript'
 
+export * from './presets/nestjs'
+
 export default function daopk(options: Options = {}, ...userConfigs: Linter.Config[]): LinterConfig[] {
     const configs: LinterConfig[] = [
         ignores(options.ignores),
