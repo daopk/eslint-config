@@ -23,25 +23,25 @@
   },
   "dependencies": {
     "@stylistic/eslint-plugin": "^4.2.0",
-    "@typescript-eslint/eslint-plugin": "^8.26.0",
-    "@typescript-eslint/parser": "^8.26.0",
+    "@typescript-eslint/eslint-plugin": "^8.32.0",
+    "@typescript-eslint/parser": "^8.32.0",
     "eslint-config-flat-gitignore": "^2.1.0",
-    "eslint-plugin-antfu": "^3.1.0",
-    "eslint-plugin-import-x": "^4.6.1",
-    "eslint-plugin-n": "^17.16.2",
-    "eslint-plugin-perfectionist": "^4.9.0",
+    "eslint-plugin-antfu": "^3.1.1",
+    "eslint-plugin-import-x": "^4.11.0",
+    "eslint-plugin-n": "^17.17.0",
+    "eslint-plugin-perfectionist": "^4.12.3",
     "eslint-plugin-unused-imports": "^4.1.4"
   },
   "devDependencies": {
     "@eslint/config-inspector": "^1.0.2",
-    "@types/node": "^22.13.9",
-    "bumpp": "^10.0.3",
+    "@types/node": "^22.15.16",
+    "bumpp": "^10.1.0",
     "eslint": "^9.26.0",
     "eslint-typegen": "^2.1.0",
     "jiti": "^2.4.2",
     "tsup": "^8.4.0",
-    "tsx": "^4.19.3",
-    "typescript": "^5.8.2"
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
