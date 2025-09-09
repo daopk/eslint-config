@@ -15,7 +15,7 @@
   "scripts": {
     "dev": "eslint-config-inspector",
     "typegen": "tsx scripts/typegen.ts",
-    "build": "pnpm typegen && tsup",
+    "build": "pnpm typegen && tsdown",
     "build:inspector": "pnpm build && eslint-config-inspector build",
     "lint": "eslint .",
     "prepack": "pnpm build",
@@ -39,7 +39,7 @@
     "eslint": "^9.35.0",
     "eslint-typegen": "^2.3.0",
     "jiti": "^2.5.1",
-    "tsup": "^8.5.0",
+    "tsdown": "^0.15.0",
     "tsx": "^4.20.5",
     "typescript": "^5.9.2"
   },
