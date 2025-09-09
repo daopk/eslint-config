@@ -11,7 +11,6 @@ export function builtin(): LinterConfig {
             'no-unused-labels': 'error',
             'no-unused-vars': 'off',
 
-            'object-curly-newline': 'off',
             'yoda': ['error', 'never'],
         },
     }
