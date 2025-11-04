@@ -6,6 +6,7 @@ export interface Options {
     stylistic?: StylisticOptions
     ignores?: string[]
     rules?: RuleOptions
+    vue?: boolean
 }
 
 export type LinterConfig = Omit<Linter.Config, 'plugins'> & {

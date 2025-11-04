@@ -1,3 +1,3 @@
 import daopk from './src'
 
-export default daopk()
+export default daopk({ vue: true })

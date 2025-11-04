@@ -1,5 +1,6 @@
 import type { Linter } from 'eslint'
 import type { LinterConfig, Options } from './types'
+import { isPackageExists } from 'local-pkg'
 import { antfu } from './configs/antfu'
 import { builtin } from './configs/builtin'
 import { ignores } from './configs/ignores'
@@ -8,10 +9,13 @@ import { node } from './configs/node'
 import { perfectionist } from './configs/perfectionist'
 import { stylistic } from './configs/stylistic'
 import { typescript } from './configs/typescript'
+import { vue } from './configs/vue'
 
 export * from './presets/nestjs'
 
-export default function daopk(options: Options = {}, ...userConfigs: Linter.Config[]): LinterConfig[] {
+export default function daopk(options: Options = {}, ...userConfigs: Linter.Config[]) {
+    const { vue: enableVue = isPackageExists('vue') } = options
+
     const configs: LinterConfig[] = [
         ignores(options.ignores),
         builtin(),
@@ -22,6 +26,10 @@ export default function daopk(options: Options = {}, ...userConfigs: Linter.Conf
         node(),
         perfectionist(),
     ]
+
+    if (enableVue) {
+        configs.push(...vue())
+    }
 
     if (options.rules) {
         configs.push({
