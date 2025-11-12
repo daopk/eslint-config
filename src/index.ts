@@ -9,11 +9,9 @@ import { node } from './configs/node'
 import { perfectionist } from './configs/perfectionist'
 import { stylistic } from './configs/stylistic'
 import { typescript } from './configs/typescript'
-import { vue } from './configs/vue'
+import { interopDefault } from './utils'
 
-export * from './presets/nestjs'
-
-export default function daopk(options: Options = {}, ...userConfigs: Linter.Config[]) {
+export default async function daopk(options: Options = {}, ...userConfigs: Linter.Config[]) {
     const { vue: enableVue = isPackageExists('vue') } = options
 
     const configs: LinterConfig[] = [
@@ -28,7 +26,7 @@ export default function daopk(options: Options = {}, ...userConfigs: Linter.Conf
     ]
 
     if (enableVue) {
-        configs.push(...vue())
+        configs.push(...await interopDefault((await import('./configs/vue')).vue()))
     }
 
     if (options.rules) {

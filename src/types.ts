@@ -12,3 +12,5 @@ export interface Options {
 export type LinterConfig = Omit<Linter.Config, 'plugins'> & {
     plugins?: Record<string, any>
 }
+
+export type Awaitable<T> = T | Promise<T>

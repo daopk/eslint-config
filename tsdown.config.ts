@@ -5,7 +5,7 @@ export default defineConfig({
     dts: true,
     entry: [
         'src/index.ts',
+        'src/presets/nestjs.ts',
     ],
-    format: ['esm'],
     shims: true,
 })
