@@ -8,4 +8,5 @@ export default defineConfig({
         'src/presets/nestjs.ts',
     ],
     shims: true,
+    inlineOnly: false,
 })
