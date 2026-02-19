@@ -1,6 +1,6 @@
-import type { Linter } from 'eslint'
 import type { StylisticOptions } from './configs/stylistic'
 import type { RuleOptions } from './typegen'
+import type { Linter } from 'eslint'
 
 export interface Options {
     stylistic?: StylisticOptions

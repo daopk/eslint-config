@@ -1,5 +1,5 @@
-import type { Linter } from 'eslint'
 import type { LinterConfig, Options } from './types'
+import type { Linter } from 'eslint'
 import { isPackageExists } from 'local-pkg'
 import { antfu } from './configs/antfu'
 import { builtin } from './configs/builtin'

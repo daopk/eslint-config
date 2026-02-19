@@ -1,5 +1,5 @@
-import type { StylisticCustomizeOptions } from '@stylistic/eslint-plugin'
 import type { LinterConfig } from '../types'
+import type { StylisticCustomizeOptions } from '@stylistic/eslint-plugin'
 import stylisticPlugin from '@stylistic/eslint-plugin'
 
 export type StylisticOptions = Omit<StylisticCustomizeOptions, 'flat' | 'pluginName'>
